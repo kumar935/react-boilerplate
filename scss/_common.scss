@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+//colors
+
+$green: #6cc553;
+
+
+//common stuff
+
+a{
+  text-decoration: none;
+}
+
+input{
+  outline: none;
+}
+
+.active{
+  color: green;
+}
