@@ -6,6 +6,7 @@ var express = require('express');
 var app = express();
 
 app.use(require('morgan')('short'));
+app.use('/static', express.static('static'));
 
 // ************************************
 // This is the real meat of the example

@@ -15,12 +15,21 @@ module.exports = {
   devtool: '#source-map',
   module: {
     loaders: [
-      { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader?presets[]=es2015&presets[]=react' }
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel'
+      }
     ]
   },
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
-  ]
-}
+    new webpack.HotModuleReplacementPlugin()
+  ],
+  devServer: {
+    colors: true,
+    historyApiFallback: true,
+    inline: true,
+    hot: true
+  }
+};
