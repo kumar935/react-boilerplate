@@ -1,21 +1,18 @@
-import React from 'react'
-import {render} from 'react-dom'
+import React from 'react';
+import {render} from 'react-dom';
 
-import App from './modules/App'
-import Module1 from './modules/Module1/Module1'
-import Module2 from './modules/Module2/Module2'
+import './svg-icons.font';
+import './scss/main.scss';
 
-import {Router, Route, IndexRoute, browserHistory} from 'react-router'
+import './modernizr';
+import Home from './components/Home/Home';
+import Main from './components/Main/Main';
+import {Router, Route, browserHistory} from 'react-router';
 
-render(
-  (
-    <Router history={browserHistory}>
-      <Route path="/" component={App}>
-        {/* make them children of `App` */}
-        <Route path="/module1" component={Module1}/>
-        <Route path="/module2" component={Module2}/>
-      </Route>
-    </Router>
-  ),
-  document.getElementById('app')
-)
+render((
+  <Router history={browserHistory}>
+    <Route path="/" component={Home}>
+      <Route path="/main" component={Main}/>
+    </Route>
+  </Router>
+), document.getElementById('app'));
