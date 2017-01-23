@@ -52,6 +52,7 @@ module.exports = {
  
 #### Fonts
 - For custom font after adding it in the directory `res/fonts/`, simple create a @font-face declaration in the suitable scss file and use the ___path relative to the output css file after bundling___.
+
 >__How this works__: Webpack's `url-loader` loads these fonts. See webpack.config.js for the current configuration.
 
 #### Images
