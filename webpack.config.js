@@ -32,7 +32,7 @@ const config = {
       },
       {
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract('style', 'css!sass')
+        loader: ExtractTextPlugin.extract('style', 'css!postcss!sass')
       },
       {
         /* to load svg icons or font-awesome icons as fonts */
