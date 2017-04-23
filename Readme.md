@@ -52,11 +52,13 @@ module.exports = {
  
 #### Fonts
 - For custom font after adding it in the directory `res/fonts/`, simple create a @font-face declaration in the suitable scss file and use the ___path relative to the output css file after bundling___.
+
 >__How this works__: Webpack's `url-loader` loads these fonts. See webpack.config.js for the current configuration.
 
 #### Images
 - Add the image in `res/images/`
 - Use it with `background: url()` in your scss file and use the ___path relative to the output css file after bundling___ inside url.
+
 >__How this works__: Webpacks's `url-loader` loads these images. See webpack.config.js for the current configuration. If the image is smaller than 10kb it'll be embedded as data-uri. (See webpack.config.js)
 
 ## React tips:
@@ -69,6 +71,7 @@ module.exports = {
     }
     ```
     then use this: `this.context.router.push("/whatever/route");`
+    
 ## Webpack tips:
 
 - For debugging while working on chrome, add source map by adding `devtool: '#source-map'` in `webpack.config.js`. Find more options [here](https://webpack.github.io/docs/configuration.html#devtool)
