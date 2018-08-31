@@ -1,0 +1,10 @@
+{
+  "files": "src/style/svg/*.svg",
+  "fontName": "svgicons",
+  "formats": ["ttf", "woff"],
+  "cssTemplateFontPath": "fonts/",
+  "template": "src/style/svg/templates/_svgicons.scss.njk",
+  "dest": "src/style/fonts/",
+  "destStyles": "src/style/utils/",
+  "cssTemplateClassName": "_svgicons"
+}

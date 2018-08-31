@@ -1,22 +1,56 @@
-<!doctype html public "storage">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset=utf-8/>
-    <link rel="shortcut icon"type="image/x-icon" href="data:image/x-icon;,">
-    <title>React Boilerplate</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="http://localhost:2304/dist/dist.css"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+  <title>React Boilerplate</title>
 </head>
-
-
 <body>
-    <div id="app">
+<div id="app"></div>
+<script>
+  function getJson(str) {
+    var json;
+    try {
+      json = JSON.parse(str);
+    } catch (e) {
+      console.error('Error in config: ', e);
+      return false;
+    }
+    return json;
+  }
+  window.CONST = {
+    dev: false,
+    remoteServerUrl: '',
+    remoteJsUrl: '',
+    dummyApi: false
+  };
+  var config = getJson(window.localStorage.getItem('debugConfig'));
+  if (config) {
+    window.CONST.dev = config.dev || false;
+    window.CONST.dummyApi = config.dummyApi || false;
+    window.CONST.remoteServerUrl = config.remoteServerUrl || '';
+    window.CONST.remoteJsUrl = config.remoteJsUrl || '';
+  }
 
-    </div>
-</body>
+  // add css and js
+  var head = document.getElementsByTagName('head')[0];
+  var js = document.createElement('script');
+  js.type = 'text/javascript';
+  js.src = window.CONST.remoteJsUrl + '/dist/main.bundle.js';
+  var css = document.createElement('link');
+  css.rel = 'stylesheet';
+  css.href = window.CONST.remoteJsUrl + '/dist/style.css';
+  head.appendChild(css);
+  head.appendChild(js);
 
-<script src="http://localhost:2304/dist/bundle.js">
+  // add favicon
+  var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
+  link.type = 'image/x-icon';
+  link.rel = 'shortcut icon';
+  link.href = window.CONST.remoteJsUrl + '/dist/favicon.ico';
+  document.getElementsByTagName('head')[0].appendChild(link);
 
 </script>
-
+</body>
 </html>

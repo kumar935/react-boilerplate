@@ -1,17 +1,17 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 
-class Home extends React.Component {
+class App extends Component {
   render() {
     return (
       <div>
         hello, world
         <div className="main">
-          {this.props.children}
+          <h4>APP</h4>
         </div>
       </div>
     );
   }
 }
 
-export default Home;
+export default App;
