@@ -1,5 +1,4 @@
 // import zipcelx from 'zipcelx';
-import DataService from "../services/DataService";
 
 const currencySymbolMap = {
   "INR": "0x20B9",
@@ -146,6 +145,10 @@ const Util = {
     var tempNumber = number * factor;
     var roundedTempNumber = Math.round(tempNumber);
     return roundedTempNumber / factor;
+  },
+
+  sum (a,b){
+    return a + b;
   },
 
   roundDown(number, precision){

@@ -15,7 +15,7 @@ class RouteListener extends Component{
     DataService.numberOfAjaxCAllPending = 0;
   }
   render(){
-    return '';
+    return <span/>;
   }
 }
 

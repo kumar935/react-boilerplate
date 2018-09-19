@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
-
+import NavigationSidebar from "../AdminLTE/NavigationSidebar";
+import Header from "../AdminLTE/Header/Header";
 
 class Login extends Component {
+  componentDidMount(){
+  }
   render() {
     return (
-      <div>
-        hello, world
-        <div className="main">
-          <h4>LOGIN</h4>
-        </div>
+      <div className="dashboar">
+        <Header/>
+        <NavigationSidebar/>
       </div>
     );
   }

@@ -9,6 +9,8 @@ if(!Object.values) require('object.values').shim();
 arrayFindPolyfill();
 require('../style/main.scss');
 
+document.body.className += "skin-blue sidebar-mini";
+
 const renderApp = () => {
   render(
     <AppContainer>
